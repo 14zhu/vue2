@@ -1,0 +1,31 @@
+{
+  "name": "vue2-manual",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -cw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futaprpr/vue2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/futaprpr/vue2/issues"
+  },
+  "homepage": "https://github.com/futaprpr/vue2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "rollup": "^4.0.2",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "dependencies": {
+    "htmlparser2": "^9.0.0"
+  }
+}
