@@ -10,6 +10,9 @@ export function initState(vm) {
   if (opts.computed) {
     initComputed(vm)
   }
+  if (opts.watch) {
+    initWatch(vm)
+  }
 }
 
 function proxy(vm, target, key) {
@@ -62,4 +65,22 @@ function createComputedGetter(key) {
     }
     return watcher.value
   }
+}
+
+function initWatch(vm) {
+  const watch = vm.$options.watch
+  for (const key in watch) {
+    const handler = watch[key]
+    if (Array.isArray(handler)) {
+      for (let i = 0; i < handler.length; i++) {
+        createWatcher(vm, key, handler[i])
+      }
+    } else {
+      createWatcher(vm, key, handler)
+    }
+  }
+}
+
+function createWatcher(vm, key, handler) {
+  vm.$watch(key, handler)
 }
